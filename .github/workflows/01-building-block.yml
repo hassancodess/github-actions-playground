@@ -1,0 +1,24 @@
+name: "01 - Building Blocks"
+
+on: workflow_dispatch
+
+jobs: 
+  say-hello: 
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Say Hello
+        run: echo "Say Hello"
+  
+  say-goodbye:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Say Goodbye
+        run: echo "Say Goodbye"
+
+  say-error:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: I will Fail
+        run: |
+          echo "Say Goodbye"
+          exit 1
