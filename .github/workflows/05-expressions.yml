@@ -1,0 +1,28 @@
+name: 'Expressions'
+
+on:
+  workflow_dispatch:
+    inputs:
+      debug:
+        type: boolean
+        required: true
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: '[debug] Print start-up data'
+        if: ${{inputs.debug}}
+        run: |
+          echo "Triggered by ${{github.event_name}}"
+          echo "Branch ${{github.ref}}"
+          echo "SHA ${{github.sha}}"
+          echo "Runner OS ${{runner.os}}"
+      - name: '[debug] Print start-up data'
+        if: ${{inputs.debug == github.ref == 'refs/heads/main'}}
+        run: |
+          echo "Triggered by ${{github.event_name}}"
+          echo "Branch ${{github.ref}}"
+          echo "SHA ${{github.sha}}"
+          echo "Runner OS ${{runner.os}}"
+     

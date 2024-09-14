@@ -1,0 +1,20 @@
+name: 04 Event Filters
+
+on:
+  workflow_dispatch:
+  # push:
+  #   branches:
+  #     - main
+  #   tags:
+  #     - 'v1.*'
+  #   paths:
+  #     - 'src/**'
+  #     - 'config/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run w/ Event Filters
+        run: echo "Say Hello"
